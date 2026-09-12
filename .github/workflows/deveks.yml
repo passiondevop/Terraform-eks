@@ -23,15 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug GitHub Context
-        run: |
-           echo "Repository: $GITHUB_REPOSITORY"
-           echo "Ref: $GITHUB_REF"
-
-      - name: Debug OIDC Claims
-        uses: github/actions-oidc-debugger@main
-        with:
-           audience: sts.amazonaws.com
+  
         
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
