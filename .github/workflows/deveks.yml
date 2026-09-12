@@ -27,6 +27,11 @@ jobs:
         run: |
            echo "Repository: $GITHUB_REPOSITORY"
            echo "Ref: $GITHUB_REF"
+
+      - name: Debug OIDC Claims
+        uses: github/actions-oidc-debugger@main
+        with:
+           audience: sts.amazonaws.com
         
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
